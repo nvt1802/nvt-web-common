@@ -1,0 +1,43 @@
+.btn_group {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn_group_vertical {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.btn_group > button {
+  border-radius: 0;
+}
+
+.btn_group > button:first-child {
+  border-radius: 0.4em 0 0 0.4em !important;
+}
+
+.btn_group > button:last-child {
+  border-radius: 0 0.4em 0.4em 0 !important;
+}
+
+.btn_group_vertical > button {
+  border-radius: 0;
+}
+
+.btn_group_vertical > button:first-child {
+  border-radius: 0.4em 0.4em 0 0 !important;
+}
+
+.btn_group_vertical > button:last-child {
+  border-radius: 0 0 0.4em 0.4em !important;
+}

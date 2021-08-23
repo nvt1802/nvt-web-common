@@ -7,7 +7,11 @@
 ## Install
 
 ```bash
-npm install --save nvt-web-common
+npm install nvt-web-common --save 
+```
+
+```bash
+yarn add nvt-web-common --save
 ```
 
 ## Usage
@@ -15,13 +19,18 @@ npm install --save nvt-web-common
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'nvt-web-common'
+import { Button } from 'nvt-web-common'
 import 'nvt-web-common/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const Example = () => {
+  return (
+    <Button
+      title={'CLICK'}
+      color='success'
+      size='sm'
+      variant='default'
+    />
+  )
 }
 ```
 
