@@ -1,53 +1,59 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
 
-import { TextField, FormGroups, Button, Spinners } from 'nvt-web-common'
+import { Table } from 'nvt-web-common'
 import 'nvt-web-common/dist/index.css'
+import './app.css'
 
 const App = () => {
-  const [username, setUsername] = useState<any>('')
-  const [password, setPassword] = useState<any>('')
+  // const [items, setItems] = useState<any[]>([
+  //   '🍰 Cake',
+  //   '🍩 Donut',
+  //   '🍎 Apple',
+  //   '🍕 Pizza'
+  // ])
 
-  const handleOnchangeUsername = (e: any) => {
-    setUsername(e.target.value)
-  }
+  const column = [
+    {
+      no: '1',
+      name: 'name',
+      center: false
+    },
+    {
+      no: '2',
+      name: 'age',
+      center: true
+    },
+    {
+      no: '3',
+      name: 'gender',
+      center: true
+    }
+  ]
 
-  const handleOnchangePassword = (e: any) => {
-    setPassword(e.target.value)
-  }
+  const data = [
+    {
+      no: '1',
+      name: 'ABC',
+      age: '22',
+      gender: 'name'
+    },
+    {
+      no: '1',
+      name: 'XYZ',
+      age: '23',
+      gender: 'nữ'
+    },
+    {
+      no: '1',
+      name: 'GHK',
+      age: '34',
+      gender: 'Nam'
+    }
+  ]
 
   return (
     <Fragment>
-      <FormGroups style={{ width: '300px' }}>
-        <TextField
-          title='Username'
-          name='test'
-          type='email'
-          size='sm'
-          value={username}
-          onChange={handleOnchangeUsername}
-        />
-        <TextField
-          title='Password'
-          name='test'
-          type='password'
-          size='sm'
-          value={password}
-          onChange={handleOnchangePassword}
-        />
-        <Button
-          title={
-            <Spinners
-              style={{ margin: 'auto' }}
-              type='border'
-              size='sm'
-              color='success'
-            />
-          }
-          color='primary'
-          variant='outline'
-          size='sm'
-        />
-      </FormGroups>
+      <Table isBordered isHover data={data} column={column} />
     </Fragment>
   )
 }
